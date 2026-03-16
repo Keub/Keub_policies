@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy & Terms — Keub</title>
+  <style>
+    :root{
+      --accent-1:#22dd81;
+      --accent-2:#1ac970;
+      --accent-3:#12b55f;
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#475569;
+      --link:#0b84ff;
+      --max-width:900px;
+    }
+    html,body{height:100%;margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;}
+    .page{min-height:100%;display:flex;flex-direction:column;align-items:center;}
+    .header{
+      width:100%;
+      background:linear-gradient(to bottom,var(--accent-1),var(--accent-2),var(--accent-3));
+      color:white;
+      padding:18px 16px 14px;
+      box-sizing:border-box;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+    .header-inner{max-width:var(--max-width);width:100%;display:flex;align-items:center;justify-content:space-between;}
+    .logo-row{display:flex;align-items:center;gap:12px}
+    .logo-row img{height:34px;display:block;}
+    .brand-title{font-weight:700;font-size:18px;letter-spacing:0.2px}
+    .nav{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .tab{
+      background:rgba(255,255,255,0.08);
+      color:white;
+      border:0;
+      padding:8px 12px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+      font-size:13px;
+    }
+    .tab[aria-selected="true"]{background:rgba(255,255,255,0.18)}
+    .container{max-width:var(--max-width);width:100%;padding:20px;box-sizing:border-box;}
+    .card{background:white;border-radius:10px;padding:22px;box-shadow:0 6px 20px rgba(16,24,40,0.06);color:var(--text)}
+    .intro{color:var(--muted);margin-bottom:12px;font-size:14px}
+    .content{margin-top:6px}
+    h2{margin:18px 0 10px;font-size:18px;color:var(--text)}
+    p{color:var(--muted);line-height:1.6;margin:8px 0}
+    .link{color:var(--link);text-decoration:underline;cursor:pointer}
+    .toc{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .anchor{color:var(--link);font-weight:600}
+    /* small screens */
+    @media (max-width:640px){
+      .header-inner{padding:0 6px}
+      .brand-title{display:none}
+      .logo-row img{height:30px}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header" role="banner" aria-hidden="false">
+      <div class="header-inner">
+        <div class="logo-row" aria-label="Keub">
+          <img src="assets/Keub-Logo-Horizontal-Onecolor_White.png" alt="Keub logo" />
+          <div class="brand-title">Keub</div>
+        </div>
+
+        <nav class="nav" role="navigation" aria-label="Policy navigation">
+          <button class="tab" id="tab-privacy" aria-selected="true" data-target="privacy">Privacy Policy</button>
+          <button class="tab" id="tab-terms" aria-selected="false" data-target="terms">Terms &amp; Conditions</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" role="main">
+      <div class="card" id="content-card">
+        <div class="intro">This page contains the Privacy Policy and the Terms &amp; Conditions for Keub. Use the tabs above to switch sections, or use the links below to jump to headings.</div>
+
+        <div class="toc" id="toc">
+          <a class="anchor" href="#privacy">Privacy</a>
+          <a class="anchor" href="#data-we-collect">Data We Collect</a>
+          <a class="anchor" href="#how-we-use">How We Use</a>
+          <a class="anchor" href="#contact">Contact</a>
+          <a class="anchor" href="#terms">Terms</a>
+          <a class="anchor" href="#user-responsibilities">User Responsibilities</a>
+        </div>
+
+        <div class="content" id="privacy-section" data-section="privacy">
+          <h2 id="privacy">Privacy Policy</h2>
+          <!-- Paste your privacy text below (HTML or simple paragraphs). -->
+          <p><strong>Effective date:</strong> [INSERT DATE]</p>
+          <p>We respect your privacy. This policy explains what information we collect, how we use it, and your rights.</p>
+
+          <h3 id="data-we-collect">Data We Collect</h3>
+          <p>Examples: phone number for verification, transaction records, device identifiers, and usage analytics.</p>
+
+          <h3 id="how-we-use">How We Use</h3>
+          <p>We use data to provide the service, process payments, prevent fraud, and improve the app. We do not sell personal data.</p>
+
+          <h3 id="contact">Contact</h3>
+          <p>If you have questions, email: <a class="link" href="mailto:privacy@yourdomain.com">privacy@yourdomain.com</a></p>
+        </div>
+
+        <div class="content" id="terms-section" data-section="terms" hidden>
+          <h2 id="terms">Terms &amp; Conditions</h2>
+          <!-- Paste your Terms & Conditions text below -->
+          <p><strong>Effective date:</strong> [INSERT DATE]</p>
+          <p>These Terms govern your use of the Keub app. By using the app you agree to these terms.</p>
+
+          <h3 id="user-responsibilities">User Responsibilities</h3>
+          <p>Users agree to use lockers and services in accordance with local laws and app guidelines.</p>
+
+          <h3 id="payments">Payments &amp; Refunds</h3>
+          <p>Payment terms, refund policy, and dispute resolution details go here.</p>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Tabs + deep-link handling
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const privacySec = document.getElementById('privacy-section');
+    const termsSec = document.getElementById('terms-section');
+
+    function showSection(name){
+      if(name === 'terms'){
+        privacySec.hidden = true;
+        termsSec.hidden = false;
+        document.getElementById('tab-terms').setAttribute('aria-selected','true');
+        document.getElementById('tab-privacy').setAttribute('aria-selected','false');
+      } else {
+        privacySec.hidden = false;
+        termsSec.hidden = true;
+        document.getElementById('tab-privacy').setAttribute('aria-selected','true');
+        document.getElementById('tab-terms').setAttribute('aria-selected','false');
+      }
+    }
+
+    tabs.forEach(t => t.addEventListener('click', () => {
+      showSection(t.dataset.target);
+      // update hash for deep linking
+      history.replaceState(null, '', '#' + t.dataset.target);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }));
+
+    // If a hash is present on load, prefer that view/anchor
+    window.addEventListener('load', () => {
+      const h = location.hash.replace('#','');
+      if(h === 'terms' || h === 'privacy'){
+        showSection(h);
+      } else if(h){
+        // if it's an internal anchor (e.g. #data-we-collect) show privacy and scroll
+        showSection('privacy');
+        const el = document.getElementById(h);
+        if(el) setTimeout(()=> el.scrollIntoView({behavior:'smooth'}), 60);
+      }
+    });
+
+    // Make anchor links scroll to the target inside the currently visible section
+    document.getElementById('toc').addEventListener('click', (e) => {
+      if(e.target.matches('a.anchor')){
+        e.preventDefault();
+        const target = e.target.getAttribute('href').slice(1);
+        // if target belongs to terms, switch tab first
+        if(['terms','user-responsibilities','payments'].includes(target)){
+          showSection('terms');
+        } else {
+          showSection('privacy');
+        }
+        const el = document.getElementById(target);
+        if(el) setTimeout(()=> el.scrollIntoView({behavior:'smooth', block:'start'}), 80);
+      }
+    });
+  </script>
+</body>
+</html>
