@@ -16,160 +16,156 @@
       width:100%;
       background:linear-gradient(to bottom,var(--accent-1),var(--accent-2),var(--accent-3));
       color:white;padding:28px 16px 18px;display:flex;justify-content:center;align-items:center;
-      box-shadow:0 2px 8px rgba(0,0,0,0.08);
     }
-    .header-inner{max-width:var(--max-width);width:100%;display:flex;align-items:center;justify-content:center;}
-    .brand-title{font-weight:800;font-size:34px;line-height:1;padding:12px 18px;border-radius:8px;background: rgba(255,255,255,0.06);}
-    .container{max-width:var(--max-width);width:100%;padding:20px;box-sizing:border-box;}
-    .card{background:white;border-radius:10px;padding:22px;box-shadow:0 6px 20px rgba(16,24,40,0.06);color:var(--text)}
-    .intro{color:var(--muted);margin-bottom:12px;font-size:14px}
+    .brand-title{font-weight:800;font-size:34px;padding:12px 18px;border-radius:8px;background: rgba(255,255,255,0.06);}
+    .container{max-width:var(--max-width);width:100%;padding:20px;}
+    .card{background:white;border-radius:10px;padding:22px;box-shadow:0 6px 20px rgba(16,24,40,0.06);}
     .tabs{display:flex;gap:8px;margin-top:12px}
-    .tab{background:#f3f7f5;color:var(--text);border:0;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px}
+    .tab{background:#f3f7f5;border:0;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px}
     .tab[aria-selected="true"]{background:var(--accent-1);color:white}
     .content{margin-top:16px}
-    h2{margin:6px 0 12px;font-size:18px;color:var(--text)}
-    p{color:var(--muted);line-height:1.6;margin:8px 0}
-    .support{margin-top:12px;color:var(--muted);font-weight:600}
-    /* form */
-    form{display:flex;flex-direction:column;gap:8px;margin-top:8px}
-    input[type="text"], input[type="email"], textarea, select{
-      padding:10px;border:1px solid #e6eef0;border-radius:8px;font-size:14px;color:var(--text);
-      background:white;box-sizing:border-box;
-    }
-    textarea{min-height:120px;resize:vertical}
-    .btn{background:var(--accent-1);color:white;padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:700}
-    .msg{padding:10px;border-radius:8px;background:#f1f8f4;color:#0f5132;margin-top:8px;display:none}
-    .error{color:#b91c1c;font-size:13px}
-    @media (max-width:640px){ .brand-title{font-size:26px;padding:10px 14px} }
+    h2{font-size:20px}
+    h3{margin-top:16px;font-size:16px}
+    p, li{color:var(--muted);line-height:1.6}
+    ul{padding-left:18px}
+    .highlight{font-weight:700;color:#b91c1c}
+    .support{margin-top:12px;font-weight:600}
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="header" role="banner">
-      <div class="header-inner"><div class="brand-title">Keub</div></div>
-    </header>
+<div class="page">
+<header class="header">
+  <div class="brand-title">Keub</div>
+</header>
 
-    <main class="container" role="main">
-      <div class="card" id="content-card">
-        <div class="intro">This page contains Keub's Policies and a support form to log complaints. Support email: <strong>keub@gritsa.com</strong></div>
+<main class="container">
+<div class="card">
 
-        <div class="tabs" role="tablist" aria-label="Policy tabs">
-          <button class="tab" id="tab-privacy" aria-selected="true" data-target="privacy">Privacy Policy</button>
-          <button class="tab" id="tab-terms" aria-selected="false" data-target="terms">Terms &amp; Conditions</button>
-          <button class="tab" id="tab-support" aria-selected="false" data-target="support">Support</button>
-        </div>
+<div class="tabs">
+  <button class="tab" aria-selected="true" data-target="privacy">Privacy Policy</button>
+  <button class="tab" aria-selected="false" data-target="terms">Terms & Conditions</button>
+</div>
 
-        <div class="content">
-          <section id="privacy-section" data-section="privacy">
-            <h2>Privacy Policy</h2>
-            <p><strong>Effective date:</strong> March 16, 2026</p>
-            <p>This Privacy Policy describes how Keub Locker ("the App" or "we") collects, uses, and discloses information when you use our mobile and web application.</p>
-            <h3>Data We Collect</h3>
-            <p>- Account and Authentication Data: email or phone used to sign up via Supabase Auth.</p>
-            <h3>How We Use</h3>
-            <p>We use data to provide the service, process payments via Stripe, prevent fraud, and improve the app. We do not sell personal data.</p>
-          </section>
+<div class="content">
 
-          <section id="terms-section" data-section="terms" hidden>
-            <h2>Terms &amp; Conditions</h2>
-            <p><strong>Effective date:</strong> March 16, 2026</p>
-            <p>These Terms govern your use of the Keub app. By using the app you agree to these terms.</p>
-            <h3>User Responsibilities</h3>
-            <p>Users agree to use lockers and services in accordance with local laws and app guidelines.</p>
-          </section>
+<!-- PRIVACY -->
+<section id="privacy-section">
+  <h2>Privacy Policy</h2>
+  <p><strong>Effective date:</strong> March 16, 2026</p>
+  <p>We collect minimal user data (email/phone via authentication) to operate the service, process payments, and prevent fraud. We do not sell personal data.</p>
+</section>
 
-          <section id="support-section" data-section="support" hidden>
-            <h2>Support — Log a Complaint</h2>
-            <p>If you have a problem, please describe it below. We'll respond to the email you provide. For urgent issues email <a href="mailto:keub@gritsa.com">keub@gritsa.com</a>.</p>
+<!-- TERMS -->
+<section id="terms-section" hidden>
+  <h2>KEUB Terms of Service</h2>
+  <p><strong>Effective Date:</strong> [Insert Date]</p>
+  <p><strong>Company:</strong> Keub LLC, Jackson, Wyoming, USA</p>
+  <p><strong>Contact:</strong> info@keubit.com</p>
 
-            <form id="support-form" novalidate>
-              <input id="name" type="text" placeholder="Your name (optional)" />
-              <input id="email" type="email" placeholder="Your email (required)" required />
-              <select id="type" aria-label="Issue type">
-                <option value="general">General complaint</option>
-                <option value="payment">Payment issue</option>
-                <option value="locker">Locker hardware/QR issue</option>
-                <option value="other">Other</option>
-              </select>
-              <textarea id="message" placeholder="Describe your issue (required)" required></textarea>
-              <div class="error" id="form-error" role="alert"></div>
-              <button class="btn" type="submit">Submit Complaint</button>
-            </form>
+  <h3>1. Agreement to Terms</h3>
+  <p>By using KEUB services, you agree to these Terms.</p>
 
-            <div class="msg" id="success-msg">Thanks — your complaint has been logged. We'll contact you at the email provided.</div>
-          </section>
-        </div>
+  <h3>2. Description of Services</h3>
+  <p>KEUB provides self-service lockers via QR/mobile/kiosk systems. KEUB is a technology platform, not a storage provider.</p>
 
-        <div class="support">Support email: <a href="mailto:keub@gritsa.com">keub@gritsa.com</a></div>
-      </div>
-    </main>
-  </div>
+  <h3 class="highlight">3. NO BAILMENT RELATIONSHIP</h3>
+  <p><strong>KEUB IS NOT A BAILEE.</strong></p>
+  <ul>
+    <li>KEUB does not take custody of your property</li>
+    <li>You retain full responsibility and risk</li>
+    <li>KEUB has no duty to safeguard or insure items</li>
+  </ul>
 
-  <script>
-    // Tabs
-    const tabs = Array.from(document.querySelectorAll('.tab'));
-    const sections = {
-      privacy: document.getElementById('privacy-section'),
-      terms: document.getElementById('terms-section'),
-      support: document.getElementById('support-section')
-    };
-    function showSection(name){
-      Object.keys(sections).forEach(k => sections[k].hidden = (k !== name));
-      tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.target === name ? 'true' : 'false'));
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    tabs.forEach(t => t.addEventListener('click', () => showSection(t.dataset.target)));
-    // deep-link on load
-    window.addEventListener('load', () => {
-      const h = location.hash.replace('#','');
-      if(['privacy','terms','support'].includes(h)) showSection(h);
-      else showSection('privacy');
-    });
+  <h3>4. User Responsibilities</h3>
+  <ul>
+    <li>Use lockers lawfully</li>
+    <li>Secure locker after use</li>
+    <li>Remove items before expiration</li>
+  </ul>
 
-    // Support form handling
-    const form = document.getElementById('support-form');
-    const errorEl = document.getElementById('form-error');
-    const successEl = document.getElementById('success-msg');
+  <h3>5. Prohibited Storage</h3>
+  <ul>
+    <li>Illegal items, weapons, explosives</li>
+    <li>Hazardous or perishable materials</li>
+    <li>Stolen goods</li>
+  </ul>
 
-    const SUBMIT_ENDPOINT = 'https://example.com/support'; // <-- replace with your backend endpoint
+  <h3>6. Rental Terms</h3>
+  <p>Time-limited rentals. Access may be disabled after expiry. Penalties may apply.</p>
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      errorEl.textContent = '';
-      successEl.style.display = 'none';
+  <h3>7. Payments</h3>
+  <p>Processed via Stripe. Charges include rental, damages, penalties.</p>
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const type = document.getElementById('type').value;
-      const message = document.getElementById('message').value.trim();
+  <h3>8. Fees & Damages</h3>
+  <ul>
+    <li>Late retrieval fees</li>
+    <li>Cleaning or damage costs</li>
+    <li>Forced entry costs</li>
+  </ul>
 
-      if(!email) { errorEl.textContent = 'Email is required.'; return; }
-      if(!message) { errorEl.textContent = 'Please describe the issue.'; return; }
+  <h3>9. Abandoned Property</h3>
+  <p>KEUB may remove or dispose of items after expiration without liability.</p>
 
-      const payload = { name, email, type, message, submitted_at: new Date().toISOString() };
+  <h3>10. Surveillance</h3>
+  <p>Locations may use 24/7 video monitoring for safety and fraud prevention.</p>
 
-      // Try POST to a backend; if it fails (placeholder), fallback to mailto
-      try {
-        const res = await fetch(SUBMIT_ENDPOINT, {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(payload),
-        });
-        if(res.ok){
-          successEl.style.display = 'block';
-          form.reset();
-          return;
-        }
-        // non-200 -> fallback
-      } catch (err) {
-        // fallback to mailto
-      }
+  <h3>11. Assumption of Risk</h3>
+  <p>You use KEUB at your own risk. No guarantee of security.</p>
 
-      // mailto fallback
-      const subject = encodeURIComponent('Keub Support Complaint: ' + type);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nType: ${type}\n\nMessage:\n${message}`);
-      window.location.href = `mailto:keub@gritsa.com?subject=${subject}&body=${body}`;
-    });
-  </script>
+  <h3 class="highlight">12. Limitation of Liability</h3>
+  <ul>
+    <li>No liability for lost, stolen, or damaged items</li>
+    <li>Max liability limited to rental fee paid</li>
+  </ul>
+
+  <h3>13. Indemnification</h3>
+  <p>You agree to indemnify KEUB for misuse or violations.</p>
+
+  <h3>14. Service Availability</h3>
+  <p>No guarantee of uptime or system reliability.</p>
+
+  <h3>15. Termination</h3>
+  <p>KEUB may suspend access for violations or safety concerns.</p>
+
+  <h3>16. Dispute Resolution</h3>
+  <p>Binding arbitration in Wyoming. No jury trial.</p>
+
+  <h3>17. Class Action Waiver</h3>
+  <p>Claims must be individual (no class actions).</p>
+
+  <h3>18. Governing Law</h3>
+  <p>Wyoming law applies.</p>
+
+  <h3>19. Changes</h3>
+  <p>Continued use = acceptance of updates.</p>
+
+</section>
+
+</div>
+
+<div class="support">
+  Contact: <a href="mailto:info@keubit.com">info@keubit.com</a>
+</div>
+
+</div>
+</main>
+</div>
+
+<script>
+const tabs = document.querySelectorAll('.tab');
+const sections = {
+  privacy: document.getElementById('privacy-section'),
+  terms: document.getElementById('terms-section')
+};
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.target;
+    Object.keys(sections).forEach(k => sections[k].hidden = (k !== target));
+    tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+    tab.setAttribute('aria-selected', 'true');
+  });
+});
+</script>
 </body>
 </html>
