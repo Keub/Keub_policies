@@ -4,36 +4,131 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Privacy & Terms — Keub</title>
+
   <style>
     :root{
       --accent-1:#22dd81; --accent-2:#1ac970; --accent-3:#12b55f;
-      --bg:#ffffff; --text:#111827; --muted:#475569; --link:#0b84ff;
+      --bg:#ffffff; --text:#111827; --muted:#475569;
       --max-width:900px;
     }
-    html,body{height:100%;margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;}
-    .page{min-height:100%;display:flex;flex-direction:column;align-items:center;}
+
+    html,body{
+      margin:0;
+      background:var(--bg);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    }
+
+    .page{display:flex;flex-direction:column;align-items:center;}
+
     .header{
       width:100%;
       background:linear-gradient(to bottom,var(--accent-1),var(--accent-2),var(--accent-3));
-      color:white;padding:28px 16px 18px;display:flex;justify-content:center;align-items:center;
+      color:white;
+      padding:24px;
+      text-align:center;
     }
-    .brand-title{font-weight:800;font-size:34px;padding:12px 18px;border-radius:8px;background: rgba(255,255,255,0.06);}
-    .container{max-width:var(--max-width);width:100%;padding:20px;}
-    .card{background:white;border-radius:10px;padding:22px;box-shadow:0 6px 20px rgba(16,24,40,0.06);}
-    .tabs{display:flex;gap:8px;margin-top:12px}
-    .tab{background:#f3f7f5;border:0;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px}
-    .tab[aria-selected="true"]{background:var(--accent-1);color:white}
-    .content{margin-top:16px}
-    h2{font-size:20px}
-    h3{margin-top:16px;font-size:16px}
-    p, li{color:var(--muted);line-height:1.6}
-    ul{padding-left:18px}
-    .highlight{font-weight:700;color:#b91c1c}
-    .support{margin-top:12px;font-weight:600}
+
+    .brand-title{
+      font-size:32px;
+      font-weight:800;
+    }
+
+    .container{
+      max-width:var(--max-width);
+      width:100%;
+      padding:20px;
+    }
+
+    .card{
+      background:white;
+      border-radius:10px;
+      padding:22px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    .tabs{
+      display:flex;
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .tab{
+      background:#f3f7f5;
+      border:0;
+      padding:8px 12px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    .tab[aria-selected="true"]{
+      background:var(--accent-1);
+      color:white;
+    }
+
+    .content{margin-top:16px;}
+
+    h2{font-size:20px;margin-bottom:8px;}
+    h3{margin-top:16px;font-size:16px;}
+
+    p, li{
+      color:var(--muted);
+      line-height:1.6;
+      margin:6px 0;
+    }
+
+    ul{padding-left:18px;}
+
+    .highlight{
+      font-weight:800;
+      color:#b91c1c;
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-top:10px;
+    }
+
+    input, textarea, select{
+      padding:10px;
+      border:1px solid #e6eef0;
+      border-radius:8px;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .btn{
+      background:var(--accent-1);
+      color:white;
+      padding:10px;
+      border:0;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    .msg{
+      display:none;
+      margin-top:10px;
+      color:green;
+    }
+
+    .error{
+      color:red;
+      font-size:13px;
+    }
   </style>
 </head>
+
 <body>
+
 <div class="page">
+
 <header class="header">
   <div class="brand-title">Keub</div>
 </header>
@@ -44,109 +139,152 @@
 <div class="tabs">
   <button class="tab" aria-selected="true" data-target="privacy">Privacy Policy</button>
   <button class="tab" aria-selected="false" data-target="terms">Terms & Conditions</button>
+  <button class="tab" aria-selected="false" data-target="support">Support</button>
 </div>
 
 <div class="content">
 
-<!-- PRIVACY -->
+<!-- ================= PRIVACY ================= -->
 <section id="privacy-section">
   <h2>Privacy Policy</h2>
   <p><strong>Effective date:</strong> March 16, 2026</p>
-  <p>We collect minimal user data (email/phone via authentication) to operate the service, process payments, and prevent fraud. We do not sell personal data.</p>
+  <p>This Privacy Policy describes how Keub collects and uses data for authentication, payments, and fraud prevention. We do not sell personal data.</p>
 </section>
 
-<!-- TERMS -->
+<!-- ================= TERMS ================= -->
 <section id="terms-section" hidden>
-  <h2>KEUB Terms of Service</h2>
-  <p><strong>Effective Date:</strong> [Insert Date]</p>
-  <p><strong>Company:</strong> Keub LLC, Jackson, Wyoming, USA</p>
-  <p><strong>Contact:</strong> info@keubit.com</p>
 
-  <h3>1. Agreement to Terms</h3>
-  <p>By using KEUB services, you agree to these Terms.</p>
+<h2>KEUB Terms of Service (Enhanced Legal Version)</h2>
 
-  <h3>2. Description of Services</h3>
-  <p>KEUB provides self-service lockers via QR/mobile/kiosk systems. KEUB is a technology platform, not a storage provider.</p>
+<p><strong>Effective Date:</strong> [Insert Date]</p>
+<p><strong>Company:</strong> Keub LLC</p>
+<p><strong>Location:</strong> Jackson, Wyoming, USA</p>
+<p><strong>Contact:</strong> info@keubit.com</p>
 
-  <h3 class="highlight">3. NO BAILMENT RELATIONSHIP</h3>
-  <p><strong>KEUB IS NOT A BAILEE.</strong></p>
-  <ul>
-    <li>KEUB does not take custody of your property</li>
-    <li>You retain full responsibility and risk</li>
-    <li>KEUB has no duty to safeguard or insure items</li>
-  </ul>
+<h3>Agreement to Terms</h3>
+<p>By accessing or using KEUB’s services—including mobile applications, website, and kiosk interfaces (the “Services”)—you agree to be bound by these Terms of Service (“Terms”). If you do not agree, you must not use the Services.</p>
 
-  <h3>4. User Responsibilities</h3>
-  <ul>
-    <li>Use lockers lawfully</li>
-    <li>Secure locker after use</li>
-    <li>Remove items before expiration</li>
-  </ul>
+<h3>Description of Services</h3>
+<p>KEUB provides self-service, short-term storage lockers accessible via digital credentials (QR codes, mobile access, or kiosk systems). KEUB acts solely as a technology platform facilitating locker access, not as a storage or warehousing provider.</p>
 
-  <h3>5. Prohibited Storage</h3>
-  <ul>
-    <li>Illegal items, weapons, explosives</li>
-    <li>Hazardous or perishable materials</li>
-    <li>Stolen goods</li>
-  </ul>
+<h3 class="highlight">NO BAILMENT RELATIONSHIP (CRITICAL)</h3>
+<p><strong>IMPORTANT: KEUB IS NOT A BAILEE.</strong></p>
+<ul>
+<li>KEUB does not take possession, custody, or control of your property</li>
+<li>You retain full responsibility and risk for all stored items</li>
+<li>KEUB has no duty to safeguard or insure your property</li>
+</ul>
 
-  <h3>6. Rental Terms</h3>
-  <p>Time-limited rentals. Access may be disabled after expiry. Penalties may apply.</p>
+<h3>User Responsibilities</h3>
+<ul>
+<li>Use lockers only for lawful purposes</li>
+<li>Secure your locker after use</li>
+<li>Remove items before rental expiration</li>
+<li>Maintain control of your access credentials</li>
+</ul>
 
-  <h3>7. Payments</h3>
-  <p>Processed via Stripe. Charges include rental, damages, penalties.</p>
+<p><strong>You must NOT:</strong></p>
+<ul>
+<li>Share QR codes or access credentials</li>
+<li>Allow unauthorized access</li>
+<li>Tamper with locker hardware</li>
+</ul>
 
-  <h3>8. Fees & Damages</h3>
-  <ul>
-    <li>Late retrieval fees</li>
-    <li>Cleaning or damage costs</li>
-    <li>Forced entry costs</li>
-  </ul>
+<h3>Prohibited Storage</h3>
+<ul>
+<li>Illegal items</li>
+<li>Weapons or explosives</li>
+<li>Hazardous or flammable materials</li>
+<li>Perishable or biohazard materials</li>
+<li>Stolen goods</li>
+</ul>
 
-  <h3>9. Abandoned Property</h3>
-  <p>KEUB may remove or dispose of items after expiration without liability.</p>
+<p>KEUB reserves the right to deny access, remove contents, and notify law enforcement.</p>
 
-  <h3>10. Surveillance</h3>
-  <p>Locations may use 24/7 video monitoring for safety and fraud prevention.</p>
+<h3>Rental Terms</h3>
+<p>Rentals are time-limited. Fees are charged upfront. Extensions are not guaranteed.</p>
+<p>If rental expires: access may be disabled and penalties may apply.</p>
 
-  <h3>11. Assumption of Risk</h3>
-  <p>You use KEUB at your own risk. No guarantee of security.</p>
+<h3>Payments</h3>
+<p>Payments are processed via Stripe. You authorize KEUB to charge for rental, overages, damages, and recovery fees.</p>
 
-  <h3 class="highlight">12. Limitation of Liability</h3>
-  <ul>
-    <li>No liability for lost, stolen, or damaged items</li>
-    <li>Max liability limited to rental fee paid</li>
-  </ul>
+<h3>Fees, Penalties, and Damage</h3>
+<ul>
+<li>Late retrieval fees</li>
+<li>Locker overstay penalties</li>
+<li>Cleaning fees</li>
+<li>Damage or vandalism costs</li>
+<li>Forced entry or recovery costs</li>
+</ul>
 
-  <h3>13. Indemnification</h3>
-  <p>You agree to indemnify KEUB for misuse or violations.</p>
+<h3>Abandoned Property</h3>
+<p>KEUB may remove, store, or dispose of items after expiration at its discretion. KEUB is not liable.</p>
 
-  <h3>14. Service Availability</h3>
-  <p>No guarantee of uptime or system reliability.</p>
+<h3>Surveillance & Security</h3>
+<p>Locations may include 24/7 video surveillance. This does not guarantee protection.</p>
 
-  <h3>15. Termination</h3>
-  <p>KEUB may suspend access for violations or safety concerns.</p>
+<h3>Assumption of Risk</h3>
+<p>You acknowledge storage is at your sole risk.</p>
 
-  <h3>16. Dispute Resolution</h3>
-  <p>Binding arbitration in Wyoming. No jury trial.</p>
+<h3 class="highlight">Limitation of Liability (MAX PROTECTION)</h3>
+<ul>
+<li>No liability for lost, stolen, or damaged items</li>
+<li>No liability for unauthorized access or outages</li>
+<li>Maximum liability limited to rental amount paid</li>
+</ul>
 
-  <h3>17. Class Action Waiver</h3>
-  <p>Claims must be individual (no class actions).</p>
+<h3>Indemnification</h3>
+<p>You agree to defend and indemnify KEUB from claims arising from misuse or violations.</p>
 
-  <h3>18. Governing Law</h3>
-  <p>Wyoming law applies.</p>
+<h3>Service Availability</h3>
+<p>No guarantee of uptime, reliability, or hardware availability.</p>
 
-  <h3>19. Changes</h3>
-  <p>Continued use = acceptance of updates.</p>
+<h3>Account Termination</h3>
+<p>KEUB may suspend access for violations, fraud, or safety concerns.</p>
+
+<h3>Dispute Resolution (ARBITRATION)</h3>
+<p>All disputes resolved via binding arbitration in Wyoming. No jury trial.</p>
+
+<h3>Class Action Waiver</h3>
+<p>Claims must be brought individually.</p>
+
+<h3>Governing Law</h3>
+<p>Wyoming law applies.</p>
+
+<h3>Changes to Terms</h3>
+<p>Continued use constitutes acceptance.</p>
+
+<h3>Contact</h3>
+<p>Keub LLC — info@keubit.com</p>
+
+</section>
+
+<!-- ================= SUPPORT ================= -->
+<section id="support-section" hidden>
+
+<h2>Support — Log a Complaint</h2>
+
+<p>Email: <a href="mailto:info@keubit.com">info@keubit.com</a></p>
+
+<form id="support-form">
+  <input id="name" type="text" placeholder="Your name (optional)" />
+  <input id="email" type="email" placeholder="Your email (required)" required />
+  <select id="type">
+    <option value="general">General complaint</option>
+    <option value="payment">Payment issue</option>
+    <option value="locker">Locker issue</option>
+    <option value="other">Other</option>
+  </select>
+  <textarea id="message" placeholder="Describe your issue (required)" required></textarea>
+  <div class="error" id="form-error"></div>
+  <button class="btn" type="submit">Submit Complaint</button>
+</form>
+
+<div class="msg" id="success-msg">Complaint submitted.</div>
 
 </section>
 
 </div>
-
-<div class="support">
-  Contact: <a href="mailto:info@keubit.com">info@keubit.com</a>
-</div>
-
 </div>
 </main>
 </div>
@@ -155,17 +293,38 @@
 const tabs = document.querySelectorAll('.tab');
 const sections = {
   privacy: document.getElementById('privacy-section'),
-  terms: document.getElementById('terms-section')
+  terms: document.getElementById('terms-section'),
+  support: document.getElementById('support-section')
 };
 
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     const target = tab.dataset.target;
     Object.keys(sections).forEach(k => sections[k].hidden = (k !== target));
-    tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
-    tab.setAttribute('aria-selected', 'true');
+    tabs.forEach(t => t.setAttribute('aria-selected','false'));
+    tab.setAttribute('aria-selected','true');
   });
 });
+
+// Support form
+const form = document.getElementById('support-form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if(!email || !message){
+    document.getElementById('form-error').textContent = "Please fill required fields.";
+    return;
+  }
+
+  const subject = encodeURIComponent("Keub Support Complaint");
+  const body = encodeURIComponent(message);
+
+  window.location.href = `mailto:info@keubit.com?subject=${subject}&body=${body}`;
+});
 </script>
+
 </body>
 </html>
